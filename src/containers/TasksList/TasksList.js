@@ -27,9 +27,18 @@ const TasksList = () => {
     return (
         tasks ? <>
             <Task tasks={tasks.tasks}/>
-            {/*<Button name='id' onClick={(event) => handleSort(event.target.name)}>*/}
-            {/*    Sort*/}
-            {/*</Button>*/}
+            <Button name='id' onClick={(event) => handleSort(event.target.name)}>
+                Sort by ID
+            </Button>
+
+            <Button name='username' onClick={(e) => handleSort(e.target.name)}>
+                Sort By username
+            </Button>
+
+            <Button name={'email'} onClick={(e) => handleSort(e.target.name)}>
+                Sort by email
+            </Button>
+
             {/*<Pagination aria-label="Page pagination">*/}
             {/*    <PaginationItem onClick={pageChange}>*/}
             {/*        <PaginationLink previous/>*/}

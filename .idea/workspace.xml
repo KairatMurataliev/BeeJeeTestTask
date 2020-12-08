@@ -1,9 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="85a55d01-e8bf-448c-a722-e1e4b91ccb66" name="Default Changelist" comment="- created tasks list component&#10;- create configure store file , actions , reducer &#10;- created layout component&#10;- added routes fil for routing on pages&#10;- created add task component &#10;- created instance for axios">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Task/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task/Task.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/TasksList/TasksList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/TasksList/TasksList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actions.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1lMnM07EADdSfiaLbKFEHEOmeSl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/store/reducers" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="- added header&#10;- added edit task component&#10;- added local storage for saving user's session&#10;- divided reducers">
+      <created>1607430209538</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607430209538</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- deleted not using variables">
+      <created>1607430393772</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607430393772</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- added edit">
+      <created>1607431004756</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607431004756</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- edit in reducers">
+      <created>1607432509461</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607432509461</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="- created tasks list component&#10;- create configure store file , actions , reducer &#10;- created layout component&#10;- added routes fil for routing on pages&#10;- created add task component &#10;- created instance for axios" />
+    <MESSAGE value="- added header&#10;- added edit task component&#10;- added local storage for saving user's session&#10;- divided reducers" />
+    <MESSAGE value="- deleted not using variables" />
+    <MESSAGE value="- added edit" />
+    <MESSAGE value="- edit in reducers" />
+    <option name="LAST_COMMIT_MESSAGE" value="- edit in reducers" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="0" width="821" height="900" key="CommitChangelistDialog2" timestamp="1607432509095">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="0" width="821" height="900" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1607432509095" />
+    <state x="144" y="76" key="DiffContextDialog" timestamp="1607418208175">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="76" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1607418208175" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1607432510532">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1607432510532" />
   </component>
 </project>

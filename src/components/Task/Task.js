@@ -14,7 +14,7 @@ const Task = props => {
 
     return (
         <Row>
-            {props.tasks.map((task, index) => {
+            {props.tasks && props.tasks.map((task, index) => {
                 return (
                     <Col key={index}>
                         <Card>

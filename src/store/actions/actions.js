@@ -28,7 +28,9 @@ export const sortTasks = name => {
     return async dispatch => {
         try {
             const response = await axios.get(`/?developer=Kairat?sort_field=${name}`);
-            console.log(response.data);
+
+            console.log(response.data.message.tasks);
+            dispatch(getTasksSuccess(response.data.message.tasks))
         } catch (e) {
 
         }
