@@ -22,7 +22,8 @@ const middleware = [
 ];
 
 const enhancers = composeEnhancers(applyMiddleware(...middleware));
-const store = createStore(rootReducer, enhancers);
+const persistedState = loadState();
+const store = createStore(rootReducer, persistedState, enhancers);
 
 store.subscribe(() => {
     saveState({

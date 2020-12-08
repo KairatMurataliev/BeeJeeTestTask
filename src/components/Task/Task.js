@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {Card, Row, Col, CardText, CardTitle, CardBody, Button, CardSubtitle} from 'reactstrap';
+import {Card, Row, Col, CardText, CardTitle, CardBody, CardSubtitle} from 'reactstrap';
 import {NavLink} from 'react-router-dom';
 import {findTaskToEdit} from "../../store/actions/actions";
 
