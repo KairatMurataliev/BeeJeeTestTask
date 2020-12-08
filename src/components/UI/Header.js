@@ -17,6 +17,18 @@ const Header = (props) => {
                     </NavItem> : <NavItem>
                         <NavLink to={'/login'} style={{cursor: 'pointer'}}>Login</NavLink>
                     </NavItem>}
+
+                    <NavItem>
+                        <NavLink to={'/create'}>
+                            <Button>Create Task</Button>
+                        </NavLink>
+                    </NavItem>
+
+                    <NavItem>
+                        <NavLink to={'/'}>
+                            <Button>Tasks</Button>
+                        </NavLink>
+                    </NavItem>
                 </Nav>
             </Navbar>
         </div>
