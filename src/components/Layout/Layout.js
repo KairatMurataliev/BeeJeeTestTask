@@ -1,10 +1,11 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import {Container} from 'reactstrap';
 import Header from '../UI/Header';
 
 const Layout = props => {
     const user = useSelector(state => state.usr.user);
+
     return (
         <>
             <Header user={user}/>

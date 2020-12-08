@@ -7,7 +7,7 @@ import {
     CREATE_TASK_SUCCESS,
     LOGIN_USER_SUCCESS,
     LOGIN_USER_ERROR,
-    SET_TASK_TO_STORE
+    SET_TASK_TO_STORE,
 } from "./actionTypes";
 
 const getTasksSuccess = tasks => ({type: GET_TASKS_SUCCESS, tasks});
@@ -60,12 +60,16 @@ export const findTaskToEdit = (id) => {
     }
 };
 
-export const editTask = (id) => {
-    return async dispatch => {
+export const editTask = (data) => {
+
+    return async (dispatch, getState) => {
+        const token = getState().usr.user.token;
+        const id = data.id;
+        const editedTask = {text: data.text, status: data.status, token};
         try {
             // const response = await axios.post(`/?developer=Kairat/edit/${id}`)
-            const response = await axios.post(`/edit/${id}/?developer=Kairat`)
-            console.log(response);
+            const response = await axios.post(`/edit/${id}/?developer=Kairat`, editedTask);
+            console.log(response.data);
         } catch(e) {
 
         }
@@ -89,7 +93,6 @@ export const createTask = taskData => {
 const loginUserSuccess = user => ({type: LOGIN_USER_SUCCESS, user});
 
 export const loginUser = userData => {
-    console.log(userData);
     return async dispatch => {
         try {
             const response = await axios.post('/login/?developer=Kairat', userData);
@@ -99,3 +102,4 @@ export const loginUser = userData => {
         }
     }
 };
+

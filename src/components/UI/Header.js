@@ -12,11 +12,9 @@ const Header = (props) => {
         <div>
             <Navbar color="dark" light expand="md">
                 <Nav>
-                    {props.user ? <NavItem>
-                        <Button color='primary'>Logout</Button>
-                    </NavItem> : <NavItem>
+                    {!props.user ? <NavItem>
                         <NavLink to={'/login'} style={{cursor: 'pointer'}}>Login</NavLink>
-                    </NavItem>}
+                    </NavItem> : null}
 
                     <NavItem>
                         <NavLink to={'/create'}>

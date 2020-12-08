@@ -17,7 +17,7 @@ const EditTask = () => {
 
     const handleEdit = (e) => {
         e.preventDefault();
-        // dispatch(editTask())
+        dispatch(editTask(task))
     };
 
     const changeHandler = e => {
@@ -27,18 +27,18 @@ const EditTask = () => {
     };
 
     return (
-        <>
+        oneTask ? <>
             <Row>
                 <Col sm="12" md={{ size: 6, offset: 3 }}>
                     <Form onSubmit={handleEdit}>
                         <FormGroup>
                             <Label for='status'>Status</Label>
-                            <Input type='text' id='status' name='status' value={task.status} onChange={changeHandler}/>
+                            <Input type='text' id='status' name='status' onChange={changeHandler}/>
                         </FormGroup>
 
                         <FormGroup>
                             <Label for='text'>Text</Label>
-                            <Input type='text' id='text' name='text' value={task.text} onChange={changeHandler}/>
+                            <Input type='text' id='text' name='text' onChange={changeHandler}/>
                         </FormGroup>
 
                         <FormGroup>
@@ -47,7 +47,7 @@ const EditTask = () => {
                     </Form>
                 </Col>
             </Row>
-        </>
+        </> : null
     );
 };
 
