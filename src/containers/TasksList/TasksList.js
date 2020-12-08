@@ -1,21 +1,43 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from "react-redux";
-import {getTasks} from "../../store/actions/actions";
-import MessageComponent from "../../components/MessageComponent/MessageComponent";
+import {Pagination, PaginationItem, PaginationLink, Button} from "reactstrap";
+import {getTasks, getTasksPage, sortTasks} from "../../store/actions/actions";
+import Task from "../../components/Task/Task";
 
 const TasksList = () => {
 
+    const [activePage, setActivePage] = useState(1);
+
     const dispatch = useDispatch();
-    const tasks = useSelector(state => state.tasks);
+    const tasks = useSelector(state => state.tasks.tasks);
 
     useEffect(() => {
         dispatch(getTasks());
     }, [dispatch]);
 
-    console.log(tasks);
+    const pageChange = page => {
+        setActivePage(page);
+        dispatch(getTasksPage(activePage))
+    };
+
+    const handleSort = name => {
+        dispatch(sortTasks(name))
+    };
+
     return (
         tasks ? <>
-            <MessageComponent tasks={tasks}/>
+            <Task tasks={tasks.tasks}/>
+            {/*<Button name='id' onClick={(event) => handleSort(event.target.name)}>*/}
+            {/*    Sort*/}
+            {/*</Button>*/}
+            {/*<Pagination aria-label="Page pagination">*/}
+            {/*    <PaginationItem onClick={pageChange}>*/}
+            {/*        <PaginationLink previous/>*/}
+            {/*    </PaginationItem>*/}
+            {/*    <PaginationItem onClick={pageChange}>*/}
+            {/*        <PaginationLink next/>*/}
+            {/*    </PaginationItem>*/}
+            {/*</Pagination>*/}
         </> : null
     );
 };

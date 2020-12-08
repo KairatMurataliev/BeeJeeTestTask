@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {ConnectedRouter} from "connected-react-router";
 
-import store from './store/configureStore';
+import store, {history} from "./store/configureStore";
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <BrowserRouter>
+            <ConnectedRouter history={history}>
                 <App/>
-            </BrowserRouter>
+            </ConnectedRouter>
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')

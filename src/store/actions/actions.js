@@ -1,5 +1,14 @@
 import axios from '../../api-path';
-import {GET_TASKS_ERROR, GET_TASKS_SUCCESS, CREATE_TASK_ERROR, CREATE_TASK_SUCCESS} from "./actionTypes";
+import {push} from 'connected-react-router';
+import {
+    GET_TASKS_ERROR,
+    GET_TASKS_SUCCESS,
+    CREATE_TASK_ERROR,
+    CREATE_TASK_SUCCESS,
+    LOGIN_USER_SUCCESS,
+    LOGIN_USER_ERROR,
+    SET_TASK_TO_STORE
+} from "./actionTypes";
 
 const getTasksSuccess = tasks => ({type: GET_TASKS_SUCCESS, tasks});
 const getTasksError = error => ({type: GET_TASKS_ERROR, error});
@@ -9,8 +18,56 @@ export const getTasks = () => {
         try {
             const response = await axios.get('/?developer=Kairat');
             dispatch(getTasksSuccess(response.data.message))
-        } catch(e) {
+        } catch (e) {
             console.log(e)
+        }
+    }
+};
+
+export const sortTasks = name => {
+    return async dispatch => {
+        try {
+            const response = await axios.get(`/?developer=Kairat?sort_field=${name}`);
+            console.log(response.data);
+        } catch (e) {
+
+        }
+    }
+};
+
+export const getTasksPage = page => {
+    return async dispatch => {
+        try {
+            const response = await axios.get(`/?developer=Kairat?page=${page}`);
+            console.log(response.data);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+};
+
+
+const seTaskToStore = data => ({type: SET_TASK_TO_STORE, data});
+
+export const findTaskToEdit = (id) => {
+    return async (dispatch, getState) => {
+        const tasks = getState().tasks.tasks.tasks;
+        for (let task of tasks) {
+            if(task.id === id) {
+                dispatch(seTaskToStore(task))
+            }
+        }
+    }
+};
+
+export const editTask = (id) => {
+    return async dispatch => {
+        try {
+            // const response = await axios.post(`/?developer=Kairat/edit/${id}`)
+            const response = await axios.post(`/edit/${id}/?developer=Kairat`)
+            console.log(response);
+        } catch(e) {
+
         }
     }
 };
@@ -19,8 +76,24 @@ export const getTasks = () => {
 export const createTask = taskData => {
     return async dispatch => {
         try {
-            const response = await axios.post('https://uxcandy.com/~shapoval/test-task-backend/v2/create?developer=Kairat', taskData);
-            console.log(response.data);
+            await axios.post('/create?developer=Kairat', taskData);
+            dispatch(getTasks());
+            dispatch(push("/"))
+        } catch (e) {
+            console.log(e);
+        }
+    }
+};
+
+
+const loginUserSuccess = user => ({type: LOGIN_USER_SUCCESS, user});
+
+export const loginUser = userData => {
+    console.log(userData);
+    return async dispatch => {
+        try {
+            const response = await axios.post('/login/?developer=Kairat', userData);
+            dispatch(loginUserSuccess(response.data));
         } catch (e) {
             console.log(e);
         }
